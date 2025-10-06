@@ -8,6 +8,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import pkg.Calculadora;
+
 class testCalculadora {
 
 	@BeforeAll
@@ -27,8 +29,23 @@ class testCalculadora {
 	}
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testSuma() {
+		assertEquals(5, Calculadora.suma(2,3));
 	}
+	
+	@Test
+	void testResta() {
+		assertEquals(1, Calculadora.resta(4,3));
+	}	
+	
+	@Test
+	void testMultiplicacion() {
+		assertEquals(6, Calculadora.multiplica(2,3));
+	}
+	
+	@Test
+	void testDivision() {
+		assertEquals(2, Calculadora.divide(6,3));
+	}	
 
 }
