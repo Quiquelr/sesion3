@@ -41,35 +41,35 @@ class testCuenta {
 
 	@Test
 	void testIngreso() {
-		cuenta.ingreso(200);
-		assertEquals(200, cuenta.getSaldo());
+		cuenta.ingreso(200.0);
+		assertEquals(200.0, cuenta.getSaldo());
 	}
 	
 
 	@Test
 	void testReingreso() {
-		cuenta.reintegro(200);
-		assertEquals(-200, cuenta.getSaldo());
+		cuenta.reintegro(200.0);
+		assertEquals(-200.0, cuenta.getSaldo());
 	}	
 	
 	 @Test
 	 void test0014() {
-		 cuenta12345.reintegro(200);
-		 assertEquals(-150, cuenta12345.getSaldo());
-		 cuenta67890.reintegro(350);
-		 assertEquals(-350, cuenta67890.getSaldo());
-		 cuenta12345.ingreso(100);
-		 assertEquals(-50, cuenta12345.getSaldo());
-		 cuenta67890.reintegro(200);
-		 assertEquals(-500, cuenta67890.getSaldo()); //debe dar error
-		 cuenta67890.reintegro(150);
-		 assertEquals(-500, cuenta67890.getSaldo());
-		 cuenta12345.reintegro(200);
-		 assertEquals(-250, cuenta12345.getSaldo());
-		 cuenta67890.ingreso(50);
-		 assertEquals(-450, cuenta67890.getSaldo());
-		 cuenta67890.reintegro(100);
-		 assertEquals(-500, cuenta67890.getSaldo()); //debe da error
+		 cuenta12345.reintegro(200.0);
+		 assertEquals(-150.0, cuenta12345.getSaldo());
+		 cuenta67890.reintegro(350.0);
+		 assertEquals(-350.0, cuenta67890.getSaldo());
+		 cuenta12345.ingreso(100.0);
+		 assertEquals(-50.0, cuenta12345.getSaldo());
+		 cuenta67890.reintegro(200.0);
+		 assertEquals(-350.0, cuenta67890.getSaldo(), "Fondos insuficientes (saldo -350) en la cuenta 567890 para el reintegro de 200"); 
+		 cuenta67890.reintegro(150.0);
+		 assertEquals(-500.0, cuenta67890.getSaldo());
+		 cuenta12345.reintegro(200.0);
+		 assertEquals(-250.0, cuenta12345.getSaldo());
+		 cuenta67890.ingreso(50.0);
+		 assertEquals(-450.0, cuenta67890.getSaldo());
+		 cuenta67890.reintegro(100.0);
+		 assertEquals(-450.0, cuenta67890.getSaldo(), "Fondos insuficientes (saldo -450) en la cuenta 567890 para el reintegro de 100"); 
 		 
 		 
 		 

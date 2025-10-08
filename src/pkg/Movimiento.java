@@ -24,6 +24,16 @@ public class Movimiento {
 	}
 	public void setDetalle(String detalle) {
 		this.detalle = detalle;
+	}
+	public Movimiento(Double importe, Boolean signo, String detalle) {
+		super();
+		this.importe = importe;
+		if(signo) {
+			this.signo = Signo.D; 
+		}else {
+			this.signo = Signo.H;
+		}
+		this.detalle = detalle;
 	}	
 
 }

@@ -3,6 +3,8 @@ package pkg;
 import java.util.ArrayList;
 import java.util.List;
 
+import pkg.Movimiento.Signo;
+
 public class Cuenta {
 	
 	String numero;
@@ -15,8 +17,9 @@ public class Cuenta {
 		this.saldo = i;
 	}
 
-	public void ingreso(int i) {
+	public void ingreso(Double i) {
 		saldo += i;		
+		movimientos.add(new Movimiento(i, false, "ingreso"));
 	}
 
 	public Double getSaldo() {
@@ -44,11 +47,10 @@ public class Cuenta {
 		this.saldo = saldo;
 	}
 
-	public void reintegro(int i) {
-		if(saldo-i < -500) {
-			 saldo = -500.0;
-		}else {
+	public void reintegro(Double i) {
+		if(saldo-i >= -500) {		
 			saldo -= i;
+			movimientos.add(new Movimiento(i, true, "reintegro"));
 		}		
 		
 	}
