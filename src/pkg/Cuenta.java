@@ -51,7 +51,9 @@ public class Cuenta {
 		if(saldo-i >= -500) {		
 			saldo -= i;
 			movimientos.add(new Movimiento(i, true, "reintegro"));
-		}		
+		}else {
+			System.out.println("Fondos insuficientes");
+		}
 		
 	}
 
