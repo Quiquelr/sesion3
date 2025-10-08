@@ -45,7 +45,11 @@ public class Cuenta {
 	}
 
 	public void reintegro(int i) {
-		saldo -= i;
+		if(saldo-i < -500) {
+			 saldo = -500.0;
+		}else {
+			saldo -= i;
+		}		
 		
 	}
 

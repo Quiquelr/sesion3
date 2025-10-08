@@ -67,7 +67,7 @@ class testCuenta {
 		 cuenta12345.reintegro(200);
 		 assertEquals(-250, cuenta12345.getSaldo());
 		 cuenta67890.ingreso(50);
-		 assertEquals(-500, cuenta67890.getSaldo());
+		 assertEquals(-450, cuenta67890.getSaldo());
 		 cuenta67890.reintegro(100);
 		 assertEquals(-500, cuenta67890.getSaldo()); //debe da error
 		 
