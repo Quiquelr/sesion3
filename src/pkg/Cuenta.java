@@ -1,18 +1,22 @@
 package pkg;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cuenta {
 	
 	String numero;
 	String titular;
 	Double saldo;
+	List<Movimiento> movimientos;
 	
 	public Cuenta(Double i) {
+		movimientos = new ArrayList<Movimiento>();
 		this.saldo = i;
 	}
 
 	public void ingreso(int i) {
-		saldo += i;
-		
+		saldo += i;		
 	}
 
 	public Double getSaldo() {
